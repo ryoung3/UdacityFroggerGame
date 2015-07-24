@@ -1,13 +1,8 @@
+'use strict';
 // Draw the enemy and player objects on the screen
 Object.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
-
-//Reset player to beginning position
-Object.prototype.reset = function() {
-  player.x = 200;
-  player.y = 400;
-}
+};
 
 /*
     Enemy Objects
@@ -23,7 +18,7 @@ var Enemy = function(x,y) {
     this.x = x;
     this.y = y;
     this.speed = Math.floor((Math.random() * 200) + 100);
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -41,7 +36,7 @@ Enemy.prototype.update = function(dt) {
             this.reset();
         }
     }
-}
+};
 
 /*
     Player Object
@@ -52,7 +47,7 @@ var Player = function(){
     this.sprite = 'images/char-princess-girl.png';
     this.x = 200;
     this.y = 400;
-}
+};
 
 //Update player position
 Player.prototype.update = function(){
@@ -75,13 +70,18 @@ Player.prototype.update = function(){
     if(this.y < 25){
         this.reset();
     }
-}
+};
 
+//Reset player to beginning position
+Player.prototype.reset = function() {
+  player.x = 200;
+  player.y = 400;
+};
 
 //Input handler for player
 Player.prototype.handleInput = function(e){
     this.ctlKey = e;    
-}
+};
 
 
 // Instantiate enemies and player objects
