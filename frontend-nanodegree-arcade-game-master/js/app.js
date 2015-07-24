@@ -74,8 +74,8 @@ Player.prototype.update = function(){
 
 //Reset player to beginning position
 Player.prototype.reset = function() {
-  player.x = 200;
-  player.y = 400;
+  this.x = 200;
+  this.y = 400;
 };
 
 //Input handler for player
